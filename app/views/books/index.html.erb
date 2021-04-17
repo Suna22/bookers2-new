@@ -1,0 +1,6 @@
+<%= render 'layouts/errors', model: @book %>
+
+<div class="row">
+  <%= render 'books/leftsec', book: @book, user: current_user %>
+  <%= render 'books/bookssec', books: @books %>
+</div>

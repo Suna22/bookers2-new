@@ -1,0 +1,26 @@
+<div class="col-6 mx-auto">
+<h2>Editing Book</h2>
+
+<%= render 'layouts/errors', model: @book %>
+
+<%= form_with model: @book, local:true do |f| %>
+　<div>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, class:"form-control" %>
+　</div>
+  
+  <div>
+    <%= f.label :body, "Opinion" %><br />
+    <%= f.text_area :body, class:"form-control" %>
+  </div>
+  
+  <div>
+  <%= f.submit "Update Book", class:"btn btn-success my-3" %> 
+  </div>
+
+<% end %>
+
+<%= link_to "Show", book_path(@book) %>
+ | 
+<%= link_to "Back", books_path %>
+</div>

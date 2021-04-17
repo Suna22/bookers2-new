@@ -1,0 +1,45 @@
+<div class="col-md-3">
+<section>
+  <h2>User info</h2>
+  <%= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>name</th>
+        <th><%= user.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= user.introduction %></th>
+      </tr>
+    </tbody>
+  </table>
+  <div class="ro">
+      <%= link_to edit_user_path(user), class:"col-md-12 btn btn-sm btn-outline-secondary my-3" do %>
+        <i class="fas fa-user-cog"></i>
+      <% end %>
+  </div>
+</section>
+
+<section>
+  <h2>New book</h2>
+  <div class="form-group">
+    <%= form_with model: book, local:true do |f| %>
+      <div>
+        <%= f.label :Title %><br />
+        <%= f.text_field :title, class:"form-control" %>
+　    </div>
+
+      <div>
+        <%= f.label :Opinion %><br />
+        <%= f.text_area :body, class:"form-control"  %>
+      </div>
+
+      <div>
+        <%= f.submit "Create Book", class:"btn btn-success my-3"  %>
+      </div>
+
+    <% end %>
+  </div>
+</section>
+</div>
